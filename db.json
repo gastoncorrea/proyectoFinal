@@ -1,0 +1,13 @@
+{"noticias":
+    [
+        {
+            "titulo":"Las maravillas del mundo",
+            "subtitulo":"Conoce lo mejor que tiene esta vida para darte",
+            "detalle":"En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
+            "imagen":"https://pixabay.com/es/photos/alpine-monta%C3%B1as-paisaje-naturaleza-4551338/",
+            "categoria":"salud",
+            "fecha":"01-01-2021",
+            "destacado": true
+        }
+    ]
+}
