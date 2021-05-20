@@ -6,6 +6,7 @@ import Principal from './components/Principal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Categoria from './components/Categoria';
 import Detalle from './components/Detalle';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route exact path='/noticia'>
           <Detalle></Detalle>
+        </Route>
+        <Route exact path='/login'>
+          <Login></Login>
         </Route>
       </Switch>
           <Footer></Footer>
