@@ -1,0 +1,41 @@
+.imagen{
+    height: 400px;
+}
+
+.titulo{
+    height: 300px;
+}
+.pie{
+    height: 500px;
+}
+img{
+    object-fit: cover;
+}
+.publicidad{
+    width: 800px;
+    height: 200px;
+}
+.margen-superior{
+    position: relative;
+    top: 50px;
+}
+.subir-navbar{
+    z-index: 2;
+}
+footer{
+    width: 100%;
+}
+/* article, header{
+    height: 10%;
+} */
+
+/* article, body{
+
+    width: 800px;
+    height: 500px;
+} */
+
+/* article, body, img{
+    width: 100%;
+    height: 500px;
+} */
