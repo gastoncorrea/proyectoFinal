@@ -11,7 +11,7 @@ const Admin = () => {
         <div className="row">
           <div className="col-sm-12 col-md-6 my-5 text-center">
             <h4>Ver Listas de noticias</h4>
-            <NavLink exact={true} to="/">
+            <NavLink exact={true} to="/admin/lista-noticia">
               <img
                 src="https://media.istockphoto.com/photos/a-woman-using-and-typing-on-laptop-with-blank-white-desktop-screen-picture-id1160505836"
                 alt=""

@@ -29,6 +29,7 @@ function App() {
         <Route exact path='/admin'>
           <Admin></Admin>
         </Route>
+        <Route exact to='/admin/lista-noticia'></Route>
       </Switch>
           <Footer></Footer>
     </Router>

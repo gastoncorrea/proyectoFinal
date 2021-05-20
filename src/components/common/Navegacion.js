@@ -25,7 +25,7 @@ const Navegacion = () => {
           </NavDropdown>
           <NavLink exact='true' to='/' className='nav-link'>Suscribite</NavLink>
           <NavLink exact='true' to='/' className='nav-link'>Login</NavLink>
-          <NavLink exact='true' to='/' className='nav-link'>Admin</NavLink>
+          <NavLink exact='true' to='/admin' className='nav-link'>Admin</NavLink>
         </Nav>
       </Navbar.Collapse>
       </div>
