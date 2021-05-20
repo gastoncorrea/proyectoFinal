@@ -4,6 +4,7 @@ import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
 import Principal from './components/Principal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Categoria from './components/Categoria';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Principal></Principal>
+        </Route>
+        <Route exact path='/:categoria'>
+          <Categoria></Categoria>
         </Route>
       </Switch>
           <Footer></Footer>
