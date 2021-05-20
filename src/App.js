@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Categoria from './components/Categoria';
 import Detalle from './components/Detalle';
 import Login from './components/Login';
+import Admin from './components/Admin';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route exact path='/login'>
           <Login></Login>
+        </Route>
+        <Route exact path='/admin'>
+          <Admin></Admin>
         </Route>
       </Switch>
           <Footer></Footer>
