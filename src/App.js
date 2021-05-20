@@ -5,6 +5,7 @@ import Footer from './components/common/Footer';
 import Principal from './components/Principal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Categoria from './components/Categoria';
+import Detalle from './components/Detalle';
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
         <Route exact path='/'>
           <Principal></Principal>
         </Route>
-        <Route exact path='/:categoria'>
+        <Route exact path='/categoria'>
           <Categoria></Categoria>
+        </Route>
+        <Route exact path='/noticia'>
+          <Detalle></Detalle>
         </Route>
       </Switch>
           <Footer></Footer>
