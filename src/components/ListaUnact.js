@@ -6,9 +6,9 @@ import {
   faPencilAlt,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Listant = () => {
+const ListaUnact = () => {
   return (
     <Fragment>
       <Container className="my-5">
@@ -24,9 +24,9 @@ const Listant = () => {
               <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
             </div>
             <div>
-              <Link exact={true} to="/">
+              <NavLink exact={true} to="/">
                 <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
-              </Link>
+              </NavLink>
               <Button variant="danger" className="ms-3">
                 <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
               </Button>
@@ -37,5 +37,4 @@ const Listant = () => {
     </Fragment>
   );
 };
-
-export default Listant;
+export default ListaUnact;

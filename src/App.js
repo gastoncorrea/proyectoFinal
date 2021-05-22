@@ -8,6 +8,9 @@ import Categoria from './components/Categoria';
 import Detalle from './components/Detalle';
 import Login from './components/Login';
 import Admin from './components/Admin';
+import Listant from './components/Listant';
+import Listact from './components/Listact';
+import ListaUnact from './components/ListaUnact'
 
 function App() {
   return (
@@ -29,7 +32,15 @@ function App() {
         <Route exact path='/admin'>
           <Admin></Admin>
         </Route>
-        <Route exact to='/admin/lista-noticia'></Route>
+        <Route exact path='/admin/lista-noticia'>
+          <Listant></Listant>
+        </Route>
+        <Route exact path='/admin/ver-categoria'>
+          <Listact></Listact>
+        </Route>
+        <Route exact path='/admin/ver-categoria/lista-categoria'>
+          <ListaUnact></ListaUnact>
+        </Route>
       </Switch>
           <Footer></Footer>
     </Router>

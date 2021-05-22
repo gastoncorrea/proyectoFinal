@@ -4,8 +4,8 @@ import { Button, Form } from "react-bootstrap";
 const Login = () => {
   return (
     <Fragment>
-      <section className='container'>
-          <div className='margen-superior py-3'>
+      <section className='container my-5'>
+          <div className='py-3 mt-5'>
               <h1>Logueate para encontrar el mejor contenido de esta web</h1>
           </div>
         <Form className='my-5'>

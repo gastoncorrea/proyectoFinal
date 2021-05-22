@@ -4,8 +4,8 @@ import { Button } from "react-bootstrap";
 const Categoria = () => {
   return (
     <Fragment>
-      <section className=" row container">
-        <div className="bg-primary text-light py-3 my-5 rounded col-sm-12 margen-superior">
+      <section className=" row container my-5">
+        <div className="bg-primary text-light py-3 my-5 rounded col-sm-12">
           <h3 className="ms-4">Categoria 1</h3>
         </div>
         <article className="col-sm-12 col-lg-6 border mt-5">

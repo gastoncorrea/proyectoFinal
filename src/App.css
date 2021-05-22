@@ -15,15 +15,18 @@ img{
     width: 800px;
     height: 200px;
 }
-.margen-superior{
-    position: relative;
-    top: 50px;
-}
 .subir-navbar{
     z-index: 2;
+    top: 0%;
 }
-footer{
+.footer-fijo{
     width: 100%;
+    /* position: fixed; */
+    bottom: 0%;
+    
+}
+.sin-estilo{
+    list-style: none;
 }
 /* article, header{
     height: 10%;
