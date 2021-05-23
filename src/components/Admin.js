@@ -5,7 +5,7 @@ const Admin = () => {
   return (
     <Fragment>
       <section>
-        <div className="margen-superior py-5 mt-5 text-center">
+        <div className="py-5 mt-5 text-center">
           <h1>Buenos días administrador</h1>
         </div>
         <div className="row">
@@ -31,7 +31,7 @@ const Admin = () => {
           </div>
           <div className="col-sm-12 col-md-6 my-3 text-center">
             <h4>Agregar Noticias</h4>
-            <Link exact={true} to="/">
+            <Link exact={true} to="/admin/nueva-noticia">
               <img
                 src="https://media.istockphoto.com/photos/mexican-hipster-man-working-with-computer-picture-id1127582480"
                 alt=""

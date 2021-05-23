@@ -27,7 +27,7 @@ const Listact = () => {
             Espectaculo
           </Link>
         </ListGroup.Item>
-        <ListGroup.Item as="li" disabled>
+        <ListGroup.Item as="li">
           <Link
             exact={true}
             to="/admin/ver-categoria/lista-categoria"

@@ -11,6 +11,7 @@ import Admin from './components/Admin';
 import Listant from './components/Listant';
 import Listact from './components/Listact';
 import ListaUnact from './components/ListaUnact'
+import NuevaNoticia from './components/NuevaNoticia';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route exact path='/admin/ver-categoria/lista-categoria'>
           <ListaUnact></ListaUnact>
+        </Route>
+        <Route exact path='/admin/nueva-noticia'>
+          <NuevaNoticia></NuevaNoticia>
         </Route>
       </Switch>
           <Footer></Footer>
