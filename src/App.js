@@ -12,6 +12,7 @@ import Listant from './components/Listant';
 import Listact from './components/Listact';
 import ListaUnact from './components/ListaUnact'
 import NuevaNoticia from './components/NuevaNoticia';
+import Suscripcion from './components/Suscripcion';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Principal></Principal>
+        </Route>
+        <Route exact path='/suscripcion'>
+          <Suscripcion></Suscripcion>
         </Route>
         <Route exact path='/categoria'>
           <Categoria></Categoria>

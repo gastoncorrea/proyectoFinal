@@ -23,7 +23,7 @@ const Navegacion = () => {
             <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Salud</Link></NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Fotografia</Link></NavDropdown.Item>
           </NavDropdown>
-          <Link exact='true' to='/suscribite' className='nav-link'>Suscribite</Link>
+          <Link exact='true' to='/suscripcion' className='nav-link'>Suscribite</Link>
           <Link exact='true' to='/login' className='nav-link'>Login</Link>
           <Link exact='true' to='/admin' className='nav-link'>Admin</Link>
         </Nav>
