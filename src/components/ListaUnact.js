@@ -18,7 +18,7 @@ const ListaUnact = () => {
         <ListGroup className="my-5 pt-5">
           <ListGroup.Item className="d-flex justify-content-between align-items-center">
             <div className="d-flex justify-content-between">
-              <p>Noticia 1</p>
+            <Link exact={true} to='/noticia' className='nav-link'><p>Noticia 1</p></Link>
             </div>
             <div>
               <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
