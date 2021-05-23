@@ -6,7 +6,7 @@ import {
   faPencilAlt,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ListaUnact = () => {
   return (
@@ -18,15 +18,17 @@ const ListaUnact = () => {
         <ListGroup className="my-5 pt-5">
           <ListGroup.Item className="d-flex justify-content-between align-items-center">
             <div className="d-flex justify-content-between">
-            <Link exact={true} to='/noticia' className='nav-link'><p>Noticia 1</p></Link>
+              <Link exact={true} to="/noticia" className="nav-link">
+                <p>Noticia 1</p>
+              </Link>
             </div>
             <div>
               <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
             </div>
             <div>
-              <NavLink exact={true} to="/">
+              <Link exact={true} to="/">
                 <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
-              </NavLink>
+              </Link>
               <Button variant="danger" className="ms-3">
                 <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
               </Button>

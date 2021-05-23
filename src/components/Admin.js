@@ -41,7 +41,7 @@ const Admin = () => {
           </div>
           <div className="col-sm-12 col-md-6 my-3 text-center">
             <h4>Agregar categorias</h4>
-            <Link exact={true} to="/">
+            <Link exact={true} to="/admin/ver-categoria">
               <img
                 src="https://media.istockphoto.com/photos/mature-latin-american-businesswoman-working-from-home-picture-id1207315307"
                 alt=""
