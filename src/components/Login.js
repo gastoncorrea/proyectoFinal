@@ -25,7 +25,7 @@ const Login = () => {
             <Form.Check type="checkbox" label="Recordar contraseña" />
           </Form.Group>
           <Button variant="primary" type="submit" className='mt-3'>
-            Submit
+            Ingresar
           </Button>
         </Form>
       </section>
