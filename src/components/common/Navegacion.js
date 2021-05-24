@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons';
 
-const Navegacion = () => {
+const Navegacion = (props) => {
+
     return (
       <Navbar bg="primary" expand="lg" variant='dark' className='position-fixed w-100 subir-navbar'>
         <div className="container w-75">
@@ -24,8 +25,11 @@ const Navegacion = () => {
             <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Fotografia</Link></NavDropdown.Item>
           </NavDropdown>
           <Link exact='true' to='/suscripcion' className='nav-link'>Suscribite</Link>
-          <Link exact='true' to='/login' className='nav-link'>Login</Link>
-          <Link exact='true' to='/admin' className='nav-link'>Admin</Link>
+          <Link exact='true' to='/login' className='nav-link' >Login</Link>
+          {
+            (props.habilitarAdmin === true)?(<Link exact='true' to='/admin' className='nav-link'>Admin</Link>):(null)
+          }
+          
         </Nav>
       </Navbar.Collapse>
       </div>

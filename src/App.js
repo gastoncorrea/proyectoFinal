@@ -1,4 +1,5 @@
 import './App.css';
+import {useState} from 'react';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
@@ -15,9 +16,17 @@ import NuevaNoticia from './components/NuevaNoticia';
 import Suscripcion from './components/Suscripcion';
 
 function App() {
+  const [habilitarAdmin, setHabilitarAdmin] = useState(false);
+  const habilitar = () => {
+    setHabilitarAdmin(true);
+  }
+  const desHabilitar = () => {
+    setHabilitarAdmin(false);
+  }
+
   return (
     <Router>
-          <Navegacion></Navegacion>
+          <Navegacion habilitarAdmin={habilitarAdmin}></Navegacion>
       <Switch>
         <Route exact path='/'>
           <Principal></Principal>
@@ -32,7 +41,7 @@ function App() {
           <Detalle></Detalle>
         </Route>
         <Route exact path='/login'>
-          <Login></Login>
+          <Login habilitar={habilitar} deshabilitar={desHabilitar}></Login>
         </Route>
         <Route exact path='/admin'>
           <Admin></Admin>
