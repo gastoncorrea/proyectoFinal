@@ -5,16 +5,23 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [contrasenia, setContrasenia] = useState("");
   const [error,setError] = useState(false);
+  const expRegular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   
   // validaciones
   const validarCampos = (e)=>{
     e.preventDefault();
-    if(email.trim()==='' || contrasenia.trim() === ''){
+    if(email.trim()==='' || contrasenia.trim() === '' || !expRegular.test(email) || contrasenia.length < 8){
       setError(true)
       props.deshabilitar();
+      console.log('Email invalido');
+      console.log('valor de expresion regular: ' + !expRegular.test(email))
+      console.log(contrasenia.length);
     }else{
       setError(false);
       props.habilitar();
+      console.log('Email valido');
+      console.log('valor de expresion regular: ' + !expRegular.test(email))
+      console.log(contrasenia.length);
     }
   }
   return (
@@ -47,7 +54,7 @@ const Login = (props) => {
           </Button>
         </Form>
         {
-            (error === true)?( <Alert variant="warning">Todos los campos son obligatorios</Alert>):(null)
+            (error === true)?( <Alert variant="warning">Verifique los campos </Alert>):(null)
         }
       </section>
     </Fragment>
