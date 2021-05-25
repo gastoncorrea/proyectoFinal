@@ -14,7 +14,7 @@ const NuevaNoticia = () => {
   const [destacar, setDestacar] = useState();
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       titulo.trim() === "" ||
@@ -33,7 +33,33 @@ const NuevaNoticia = () => {
       console.log('error');
     } else {
       setError(false);
-      console.log('no error')
+      console.log('no error');
+      const noticia = {
+        titulo: titulo,
+        subtitulo: subtitulo,
+        categoria: categoria,
+        detalle: detalle,
+        link: link,
+        autor: autor,
+        fecha: fecha,
+        destacar: destacar
+      }
+      console.log(noticia);
+        const configuracion = {
+          method: "POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify(noticia)
+        }
+      try{
+        const respuesta = await fetch('http://localhost:3004/noticias',configuracion)
+        if(respuesta.status === 201){
+          console.log('se agrego producto');
+        }
+      }catch(e){
+        console.log(error);
+      }
     }
   };
 
@@ -77,6 +103,7 @@ const NuevaNoticia = () => {
                 as="select"
                 onChange={(e) => setCategoria(e.target.value)}
               >
+                <option value=''>Seleccione una categoria</option>
                 <option value="actualidad">1- Actualidad</option>
                 <option value="espectaculos">2- Espectaculos</option>
                 <option value="tecnologia">3- Tecnologia</option>

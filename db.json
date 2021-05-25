@@ -1,13 +1,25 @@
-{"noticias":
-    [
-        {
-            "titulo":"Las maravillas del mundo",
-            "subtitulo":"Conoce lo mejor que tiene esta vida para darte",
-            "detalle":"En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
-            "imagen":"https://pixabay.com/es/photos/alpine-monta%C3%B1as-paisaje-naturaleza-4551338/",
-            "categoria":"salud",
-            "fecha":"01-01-2021",
-            "destacado": true
-        }
-    ]
+{
+  "noticias": [
+    {
+      "titulo": "Las maravillas del mundo",
+      "subtitulo": "Conoce lo mejor que tiene esta vida para darte",
+      "detalle": "En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
+      "imagen": "https://pixabay.com/es/photos/alpine-monta%C3%B1as-paisaje-naturaleza-4551338/",
+      "categoria": "salud",
+      "fecha": "01-01-2021",
+      "destacado": true,
+      "id": 1
+    },
+    {
+      "titulo": "25 de Mayo, día de la primera junta de gobierno argentina",
+      "subtitulo": "En este dia se celebra la primera escalada de independencia en nuestro país.",
+      "categoria": "actualidad",
+      "detalle": "Bueno aca debemos ocupara unos renglones para poder completar la noticia",
+      "link": "hjhjhasfd",
+      "autor": "Gastón Correa",
+      "fecha": "2021-05-27",
+      "destacar": "ok",
+      "id": 2
+    }
+  ]
 }
