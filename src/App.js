@@ -17,6 +17,8 @@ import Suscripcion from './components/Suscripcion';
 
 function App() {
   const [habilitarAdmin, setHabilitarAdmin] = useState(false);
+  const [producto, setProducto] = useState([]);
+  const URL = process.env.REACT_APP_API_URL;
   const habilitar = () => {
     setHabilitarAdmin(true);
   }
