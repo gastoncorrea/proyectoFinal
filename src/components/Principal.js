@@ -61,13 +61,13 @@ const principal = (props) => {
           <header className="d-flex justify-content-center  titulo">
             <h1 className="display-3 align-self-center">Publicidad</h1>
           </header>
-          <body>
+          <main>
             <img
               src="https://images.pexels.com/photos/7819309/pexels-photo-7819309.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               className="w-100 imagen"
               alt="Publicidad"
             />
-          </body>
+          </main>
           <footer className="pie d-flex align-items-center flex-column justify-content-between">
             <h3>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
@@ -119,19 +119,24 @@ const principal = (props) => {
           />
         </div> */}
         <div className="bg-primary text-light py-3 my-3 rounded col-sm-12">
-          <h3 className="ms-4">Categoria 2</h3>
+          <h3 className="ms-4">Actualidad</h3>
         </div>
-        <article className="col-sm-12 col-lg-6 mt-5 border">
+        <div className='row'>
+        {
+            props.productos.map((producto)=>(producto.categoria === 'actualidad')?(<CategoriaPcpal producto={producto} key={producto.id}></CategoriaPcpal>):(null))
+          }
+        </div>
+        {/* <article className="col-sm-12 col-lg-6 mt-5 border">
           <header className="d-flex justify-content-center  titulo">
             <h2 className="display-3 align-self-center">Titulo destacado Nº3</h2>
           </header>
-          <body className="my-3">
+          <main>
             <img
               src="https://cdn.pixabay.com/photo/2021/04/05/18/02/villa-balbiano-6154200_960_720.jpg"
               className="w-100 imagen"
               alt="Castillo"
             />
-          </body>
+          </main>
           <footer className="pie d-flex align-items-center flex-column justify-content-between">
             <h3>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sunt
@@ -142,29 +147,7 @@ const principal = (props) => {
             </h3>
             <Button className="mb-3">Ver mas...</Button>
           </footer>
-        </article>
-        <article className="col-sm-12 col-lg-6 mt-5 border">
-          <header className="d-flex justify-content-center  titulo">
-            <h2 className="display-3 align-self-center">Titulo destacado Nº3</h2>
-          </header>
-          <body>
-            <img
-              src="https://cdn.pixabay.com/photo/2021/04/05/18/02/villa-balbiano-6154200_960_720.jpg"
-              className="w-100 imagen"
-              alt="Castillo"
-            />
-          </body>
-          <footer className="pie d-flex align-items-center flex-column justify-content-between">
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sunt
-              quibusdam accusamus ratione numquam vero, ex enim fugiat minima ut
-              sequi aliquid voluptates officiis blanditiis dolorem minus
-              provident in. Temporibus qui neque doloribus porro dolorem aut. Et
-              assumenda deleniti quibusdam.
-            </h3>
-            <Button className="mb-3">Ver mas...</Button>
-          </footer>
-        </article>
+        </article> */}
         <div className="my-2 publicidad">
           <img
             src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
@@ -173,9 +156,14 @@ const principal = (props) => {
           />
         </div>
         <div className="bg-primary text-light py-3 my-3 rounded col-sm-12">
-          <h3 className="ms-4">Categoria 3</h3>
+          <h3 className="ms-4">Salud</h3>
         </div>
-        <article className="col-sm-12 col-lg-6 mt-5 border">
+        <div>
+        {
+            props.productos.map((producto)=>(producto.categoria === 'salud')?(<CategoriaPcpal producto={producto} key={producto.id}></CategoriaPcpal>):(null))
+          }
+        </div>
+        {/* <article className="col-sm-12 col-lg-6 mt-5 border">
           <header className="d-flex justify-content-center  titulo">
             <h2 className="display-3 align-self-center">Titulo destacado Nº3</h2>
           </header>
@@ -196,29 +184,7 @@ const principal = (props) => {
             </h3>
             <Button className="mb-3">Ver mas...</Button>
           </footer>
-        </article>
-        <article className="col-sm-12 col-lg-6 mt-5 border">
-          <header className="d-flex justify-content-center  titulo">
-            <h2 className="display-3 align-self-center">Titulo destacado Nº3</h2>
-          </header>
-          <body>
-            <img
-              src="https://cdn.pixabay.com/photo/2021/04/05/18/02/villa-balbiano-6154200_960_720.jpg"
-              className="w-100 imagen"
-              alt="Castillo"
-            />
-          </body>
-          <footer className="pie d-flex align-items-center flex-column justify-content-between">
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sunt
-              quibusdam accusamus ratione numquam vero, ex enim fugiat minima ut
-              sequi aliquid voluptates officiis blanditiis dolorem minus
-              provident in. Temporibus qui neque doloribus porro dolorem aut. Et
-              assumenda deleniti quibusdam.
-            </h3>
-            <Button className="mb-3">Ver mas...</Button>
-          </footer>
-        </article>
+        </article> */}
         <div className="my-2 publicidad">
           <img
             src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"

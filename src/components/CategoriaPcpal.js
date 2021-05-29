@@ -5,7 +5,7 @@ const CategoriaPcpal = (props) => {
     return (
         <article className="col-sm-12 col-lg-6 border mt-5">
           <header className="d-flex justify-content-center  titulo">
-            <h2 className="display-3 align-self-center">{props.producto.titulo}</h2>
+            <h4 className="display-4 align-self-center">{props.producto.titulo}</h4>
           </header>
           <main>
             <img
