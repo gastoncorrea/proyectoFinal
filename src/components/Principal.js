@@ -7,12 +7,13 @@ const principal = (props) => {
     <Fragment>
       <section className="row container my-5 d-flex text-center">
         <h1 className='my-5 border rounded margen-superior'>Bienvenidos al portal de noticias que tiene la mejor información para vos.</h1>
-        <article className="mt-5 col-sm-12 col-lg-6 border">
+        <div className='row'>
           {
-            props.productos.map((producto)=><DestacadoItem producto={props.producto} key={props.producto.id}></DestacadoItem>)
+            props.productos.map((producto)=><DestacadoItem producto={producto} key={producto.id}></DestacadoItem>)
           }
-        </article>
-        <article className="col-sm-12 col-lg-6 border mt-5">
+        </div>
+        
+        {/* <article className="col-sm-12 col-lg-6 border mt-5">
           <header className="d-flex justify-content-center  titulo">
             <h1 className="display-3 align-self-center">Titulo </h1>
           </header>
@@ -76,7 +77,7 @@ const principal = (props) => {
             </h3>
             <Button className="mb-3">Ver mas...</Button>
           </footer>
-        </article>
+        </article> */}
       </section>
       <section className="my-5 row container">
         <div className="bg-primary text-light py-3 my-3 rounded col-sm-12">

@@ -1,31 +1,30 @@
-import React from 'react';
-import { Fragment } from 'react';
-import {Button} from 'react-bootstrap';
+import React from "react";
+import { Fragment } from "react";
+import { Button } from "react-bootstrap";
 
 const DestacadoItem = (props) => {
-    return (
-        <Fragment>
+  return (
+    <Fragment>
+      <article className="mt-5 col-sm-12 col-lg-6 border">
         <header className="d-flex justify-content-center  titulo">
-            <h1 className="display-3 align-self-center">
-              Titulo destacado Nº1
-            </h1>
-          </header>
-          <body>
-            <img
-              src="https://cdn.pixabay.com/photo/2017/07/14/18/57/horse-2504677_960_720.jpg"
-              className="w-100 imagen"
-              alt="Paisaje"
-            />
-          </body>
-          <footer className="pie d-flex align-items-center flex-column justify-content-between">
-            <h3>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-              itaque?
-            </h3>
-            <Button className="mb-3">Ver mas...</Button>
-          </footer>
-        </Fragment>
-    );
+          <h1 className="display-4 align-self-center">
+            {props.producto.titulo}
+          </h1>
+        </header>
+        <body>
+          <img
+            src={props.producto.link}
+            className="w-100 imagen"
+            alt={props.producto.titulo}
+          />
+        </body>
+        <footer className="pie d-flex align-items-center flex-column justify-content-between">
+          <h3>{props.producto.subtitulo}</h3>
+          <Button className="mb-3">Ver mas...</Button>
+        </footer>
+      </article>
+    </Fragment>
+  );
 };
 
 export default DestacadoItem;
