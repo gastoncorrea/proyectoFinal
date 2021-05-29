@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
@@ -19,6 +19,27 @@ function App() {
   const [habilitarAdmin, setHabilitarAdmin] = useState(false);
   const [producto, setProducto] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
+
+  const pedirDatos = async ()=> {
+    try{
+      const datosGral = await fetch(URL);
+      const datosFinos = await datosGral.json();
+      if(datosGral.status === 200){
+        setProducto(datosFinos);
+        console.log('todo ok');
+      }
+    }catch(e){
+      console.log(e);
+      console.log('todo mal');
+    }
+  }
+
+  useEffect(()=>{
+    // llamar a la api
+    pedirDatos();
+  }, []);
+
+  
   const habilitar = () => {
     setHabilitarAdmin(true);
   }
@@ -31,7 +52,7 @@ function App() {
           <Navegacion habilitarAdmin={habilitarAdmin}></Navegacion>
       <Switch>
         <Route exact path='/'>
-          <Principal></Principal>
+          <Principal productos={producto} ></Principal>
         </Route>
         <Route exact path='/suscripcion'>
           <Suscripcion></Suscripcion>
@@ -49,16 +70,16 @@ function App() {
           <Admin></Admin>
         </Route>
         <Route exact path='/admin/lista-noticia'>
-          <Listant></Listant>
+          <Listant productos={producto} pedirDatos={pedirDatos}></Listant>
         </Route>
         <Route exact path='/admin/ver-categoria'>
-          <Listact></Listact>
+          <Listact ></Listact>
         </Route>
         <Route exact path='/admin/ver-categoria/lista-categoria'>
           <ListaUnact></ListaUnact>
         </Route>
         <Route exact path='/admin/nueva-noticia'>
-          <NuevaNoticia></NuevaNoticia>
+          <NuevaNoticia pedirDatos={pedirDatos}></NuevaNoticia>
         </Route>
       </Switch>
           <Footer></Footer>

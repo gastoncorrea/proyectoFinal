@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import { Container, Form, Alert } from "react-bootstrap";
 
-const NuevaNoticia = () => {
+const NuevaNoticia = (props) => {
   const [titulo, setTitulo] = useState("");
   const [subtitulo, setSubtitulo] = useState("");
   const [categoria, setCategoria] = useState("");
@@ -56,6 +56,7 @@ const NuevaNoticia = () => {
         const respuesta = await fetch('http://localhost:3004/noticias',configuracion)
         if(respuesta.status === 201){
           console.log('se agrego producto');
+          props.pedirDatos();
         }
       }catch(e){
         console.log(error);
