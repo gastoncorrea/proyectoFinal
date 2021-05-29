@@ -20,6 +20,12 @@ function App() {
   const [producto, setProducto] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
 
+  useEffect(()=>{
+    // llamar a la api
+    pedirDatos();
+  }, []);
+
+
   const pedirDatos = async ()=> {
     try{
       const datosGral = await fetch(URL);
@@ -34,10 +40,6 @@ function App() {
     }
   }
 
-  useEffect(()=>{
-    // llamar a la api
-    pedirDatos();
-  }, []);
 
   
   const habilitar = () => {

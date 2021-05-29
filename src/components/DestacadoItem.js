@@ -11,13 +11,13 @@ const DestacadoItem = (props) => {
             {props.producto.titulo}
           </h1>
         </header>
-        <body>
+        <main>
           <img
             src={props.producto.link}
             className="w-100 imagen"
             alt={props.producto.titulo}
           />
-        </body>
+        </main>
         <footer className="pie d-flex align-items-center flex-column justify-content-between">
           <h3>{props.producto.subtitulo}</h3>
           <Button className="mb-3">Ver mas...</Button>
