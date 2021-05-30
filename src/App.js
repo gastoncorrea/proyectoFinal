@@ -14,6 +14,7 @@ import Listact from './components/Listact';
 import ListaUnact from './components/ListaUnact'
 import NuevaNoticia from './components/NuevaNoticia';
 import Suscripcion from './components/Suscripcion';
+import Editar from './components/Editar';
 
 function App() {
   const [habilitarAdmin, setHabilitarAdmin] = useState(false);
@@ -82,6 +83,9 @@ function App() {
         </Route>
         <Route exact path='/admin/nueva-noticia'>
           <NuevaNoticia pedirDatos={pedirDatos}></NuevaNoticia>
+        </Route>
+        <Route exact path='/admin/editar/:id'>
+          <Editar pedirDatos={pedirDatos}></Editar>
         </Route>
       </Switch>
           <Footer></Footer>

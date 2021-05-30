@@ -10,7 +10,7 @@ const principal = (props) => {
         <h1 className='my-5 border rounded margen-superior'>Bienvenidos al portal de noticias que tiene la mejor información para vos.</h1>
         <div className='row'>
           {
-            props.productos.map((producto)=><DestacadoItem producto={producto} key={producto.id}></DestacadoItem>)
+            props.productos.map((producto)=>(producto.destacar === 'ok' )?(<DestacadoItem producto={producto} key={producto.id}></DestacadoItem>):(null))
           }
         </div>
         

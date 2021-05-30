@@ -14,6 +14,17 @@ const NuevaNoticia = (props) => {
   const [destacar, setDestacar] = useState();
   const [error, setError] = useState(false);
 
+  const cambioDestacar=(e)=>{
+    if(e.target.value === ''){
+      setDestacar(true);
+      return true;
+      console.log(destacar);
+    }else{
+      setDestacar(false);
+      return false
+      console.log(destacar);
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -158,7 +169,7 @@ const NuevaNoticia = (props) => {
                 type="checkbox"
                 label="Destacar"
                 value="ok"
-                onChange={(e) => setDestacar(e.target.value)}
+                onChange={cambioDestacar}
               />
             </Form.Group>
             <Button className="btn btn-primary text-center my-3" type="submit">

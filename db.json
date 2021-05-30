@@ -3,11 +3,10 @@
     {
       "titulo": "Las maravillas del mundo",
       "subtitulo": "Conoce lo mejor que tiene esta vida para darte",
-      "detalle": "En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
-      "imagen": "https://pixabay.com/es/photos/alpine-monta%C3%B1as-paisaje-naturaleza-4551338/",
       "categoria": "salud",
-      "fecha": "01-01-2021",
-      "destacado": true,
+      "detalle": "En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
+      "link": "https://cdn.pixabay.com/photo/2021/05/22/17/06/hybrid-6274156_960_720.jpg",
+      "autor": "Luana Correa",
       "id": 1
     },
     {
@@ -49,8 +48,7 @@
       "categoria": "deportes",
       "detalle": "Tengo qe explayarme u no se que poner asi que vamos a tratar de escribit rapidco para preacticar la digitacion",
       "link": "https://gratisography.com/wp-content/uploads/2021/04/gratisography-donut-fingers-07-free-stock-photo-1170x780.jpg",
-      "autor": "Gastón Correa",
-      "fecha": "2021-05-29",
+      "autor": "Andrea Morales",
       "id": 5
     },
     {

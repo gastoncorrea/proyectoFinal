@@ -21,7 +21,7 @@ const NoticiaItem = (props) => {
           
         </div>
         <div>
-          <Link exact={true} to="/admin/nueva-noticia">
+          <Link to={`/admin/editar/${props.producto.id}`}>
             <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
           </Link>
           <Button variant="danger" className="ms-3">
