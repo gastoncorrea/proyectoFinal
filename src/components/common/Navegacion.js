@@ -15,14 +15,14 @@ const Navegacion = (props) => {
         <Nav className="mr-auto">
           <Link exact='true' to='/' className='nav-link'>Destacados</Link>
           <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1"><Link exact={true} to='/categoria' className='nav-link text-primary'>Actualidad</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2"><Link exact={true} to='/categoria' className='nav-link text-primary'>Espectaculos</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3"><Link exact={true} to='/categoria' className='nav-link text-primary'>Tecnologia</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Deportes</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Politica</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Economia</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Salud</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria' className='nav-link text-primary'>Fotografia</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.1"><Link exact={true} to='/categoria/actualidad' className='nav-link text-primary'>Actualidad</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2"><Link exact={true} to='/categoria/espectaculos' className='nav-link text-primary'>Espectaculos</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3"><Link exact={true} to='/categoria/tecnologia' className='nav-link text-primary'>Tecnologia</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria/deportes' className='nav-link text-primary'>Deportes</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria/politica' className='nav-link text-primary'>Politica</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria/economia' className='nav-link text-primary'>Economia</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria/salud' className='nav-link text-primary'>Salud</Link></NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4"><Link exact={true} to='/categoria/fotografia' className='nav-link text-primary'>Fotografia</Link></NavDropdown.Item>
           </NavDropdown>
           <Link exact='true' to='/suscripcion' className='nav-link'>Suscribite</Link>
           <Link exact='true' to='/login' className='nav-link' >Login</Link>

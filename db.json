@@ -7,6 +7,7 @@
       "detalle": "En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
       "link": "https://cdn.pixabay.com/photo/2021/05/22/17/06/hybrid-6274156_960_720.jpg",
       "autor": "Luana Correa",
+      "destacar": "ok",
       "id": 1
     },
     {
@@ -14,10 +15,9 @@
       "subtitulo": "En este dia se celebra la primera escalada de independencia en nuestro país.",
       "categoria": "actualidad",
       "detalle": "Bueno aca debemos ocupara unos renglones para poder completar la noticia",
-      "link": "hjhjhasfd",
+      "link": "https://cdn.pixabay.com/photo/2021/05/23/06/39/zebra-6275284_960_720.jpg",
       "autor": "Gastón Correa",
-      "fecha": "2021-05-27",
-      "destacar": "ok",
+      "fecha": "2021-05-14",
       "id": 2
     },
     {
@@ -32,17 +32,6 @@
       "id": 3
     },
     {
-      "titulo": "laksfha",
-      "subtitulo": "ñklajfs",
-      "categoria": "deportes",
-      "detalle": "lkahsfolahsf",
-      "link": "kjadhgfkljsahfas",
-      "autor": "ljaghsfjas",
-      "fecha": "2021-05-12",
-      "destacar": "ok",
-      "id": 4
-    },
-    {
       "titulo": "29 de Mayo, día de comer ñoquis",
       "subtitulo": "Hoy es 29 de Mayo y te traemos la mejor recetas de ñoquis para vos.",
       "categoria": "deportes",
@@ -50,17 +39,6 @@
       "link": "https://gratisography.com/wp-content/uploads/2021/04/gratisography-donut-fingers-07-free-stock-photo-1170x780.jpg",
       "autor": "Andrea Morales",
       "id": 5
-    },
-    {
-      "titulo": "kjhsfashfas",
-      "subtitulo": "lkahrfaf",
-      "categoria": "deportes",
-      "detalle": "lkasdhfgagsghsdhjdj",
-      "link": "lkadhgalhga",
-      "autor": "lkahalsjkhgfal",
-      "fecha": "2021-05-30",
-      "destacar": "ok",
-      "id": 6
     }
   ]
 }

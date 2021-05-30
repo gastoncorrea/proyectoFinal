@@ -10,13 +10,13 @@ const Listant = (props) => {
           <h1>Estas son todas las noticias disponibles</h1>
         </div>
         <ListGroup className="my-5 pt-5">
-          {props.productos.map((producto) => (
+          {props.productos.map((producto) => 
             <NoticiaItem
               producto={producto}
               key={producto.id}
               pedirDatos={props.pedirDatos}
             ></NoticiaItem>
-          ))}
+          )}
         </ListGroup>
       </Container>
     </Fragment>

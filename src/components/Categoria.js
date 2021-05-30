@@ -1,12 +1,15 @@
 import React, { Fragment } from "react";
 import { Button } from "react-bootstrap";
+import {useParams} from "react-router-dom";
 
 const Categoria = () => {
+  const categoria = useParams().nombre;
+  const ultima = categoria[0].toUpperCase();
   return (
     <Fragment>
       <section className=" row container my-5">
         <div className="bg-primary text-light py-3 my-5 rounded col-sm-12">
-          <h3 className="ms-4">Categoria 1</h3>
+          <h3 className="ms-4">{ultima}</h3>
         </div>
         <article className="col-sm-12 col-lg-6 border mt-5">
           <header className="d-flex justify-content-center  titulo">

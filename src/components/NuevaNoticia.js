@@ -15,15 +15,7 @@ const NuevaNoticia = (props) => {
   const [error, setError] = useState(false);
 
   const cambioDestacar=(e)=>{
-    if(e.target.value === ''){
-      setDestacar(true);
-      return true;
-      console.log(destacar);
-    }else{
-      setDestacar(false);
-      return false
-      console.log(destacar);
-    }
+    setDestacar(e.target.value);
   }
   const handleSubmit = async (e) => {
     e.preventDefault();

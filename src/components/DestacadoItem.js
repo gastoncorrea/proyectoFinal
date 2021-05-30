@@ -11,7 +11,7 @@ const DestacadoItem = (props) => {
             {props.producto.titulo}
           </h1>
         </header>
-        <main>
+        <main className='my-3'>
           <img
             src={props.producto.link}
             className="w-100 imagen"

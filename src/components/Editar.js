@@ -42,16 +42,8 @@ const Editar = (props) => {
       setFecha(e.target.value)
     }
     const cambioDestacar=(e)=>{
-      if(e.target.valueChecked == ''){
-        setDestacar('false');
-        console.log(destacar);
-        return false;
-        }else{
-        setDestacar('');
-        console.log(destacar);
-        return true;
-        
-      }
+      setDestacar(e.target.value);
+      console.log(destacar);
     }
     const handleSubmit = async (e)=>{
       e.preventDefault();
@@ -59,6 +51,7 @@ const Editar = (props) => {
       // si se modifica la categoria se carga el state sino se mantiene el valor que trajo del servidor
       let modificarCategoria = (categoria === '')?(producto.categoria):(categoria);
       let fechaModificada = (fecha === '')?(producto.fecha):(fecha);
+      let destacarModificado = (destacar === '')?(producto.destacar):(destacar);
       // Validar datos
       if (
         tituloRef.current.value.trim() === "" ||
@@ -84,7 +77,8 @@ const Editar = (props) => {
             detalle: detalleRef.current.value,
             link: linkRef.current.value,
             autor: autorRef.current.value,
-            fecha: fechaModificada
+            fecha: fechaModificada,
+            destacar: destacarModificado
           }
           const respuesta = await fetch(URL,{
             method: "PUT",
@@ -96,7 +90,7 @@ const Editar = (props) => {
           }
           console.log(destacar);
           props.pedirDatos();
-          props.history.push('/admin/lista-noticia')
+          props.history.push('/admin/lista-noticia');
         }catch(e){
           console.log(e);
         }
@@ -200,7 +194,6 @@ const Editar = (props) => {
               <Form.Check
                 type="checkbox"
                 label="Destacar"
-                valueChecked={producto.descatar}
                 value='ok'
                 onChange={cambioDestacar}
               />
@@ -218,4 +211,4 @@ const Editar = (props) => {
     );
 };
 
-export default Editar;
+export default withRouter(Editar);

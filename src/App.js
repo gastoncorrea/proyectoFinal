@@ -60,7 +60,7 @@ function App() {
         <Route exact path='/suscripcion'>
           <Suscripcion></Suscripcion>
         </Route>
-        <Route exact path='/categoria'>
+        <Route exact path='/categoria/:nombre'>
           <Categoria></Categoria>
         </Route>
         <Route exact path='/detalle-noticia'>
