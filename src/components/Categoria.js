@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 
 const Categoria = () => {
   const categoria = useParams().nombre;
-  const ultima = categoria[0].toUpperCase();
+  const ultima = categoria.toUpperCase();
   return (
     <Fragment>
       <section className=" row container my-5">
