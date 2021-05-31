@@ -63,7 +63,7 @@ function App() {
         <Route exact path='/categoria/:nombre'>
           <Categoria productos={producto}></Categoria>
         </Route>
-        <Route exact path='/detalle-noticia'>
+        <Route exact path='/detalle-noticia/:id'>
           <Detalle></Detalle>
         </Route>
         <Route exact path='/login'>
