@@ -15,6 +15,7 @@ import ListaUnact from './components/ListaUnact'
 import NuevaNoticia from './components/NuevaNoticia';
 import Suscripcion from './components/Suscripcion';
 import Editar from './components/Editar';
+import Error404 from './components/Error404';
 
 function App() {
   const [habilitarAdmin, setHabilitarAdmin] = useState(false);
@@ -86,6 +87,9 @@ function App() {
         </Route>
         <Route exact path='/admin/editar/:id'>
           <Editar pedirDatos={pedirDatos}></Editar>
+        </Route>
+        <Route exact path='*'>
+          <Error404></Error404>
         </Route>
       </Switch>
           <Footer></Footer>
