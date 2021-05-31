@@ -61,7 +61,7 @@ function App() {
           <Suscripcion></Suscripcion>
         </Route>
         <Route exact path='/categoria/:nombre'>
-          <Categoria></Categoria>
+          <Categoria productos={producto}></Categoria>
         </Route>
         <Route exact path='/detalle-noticia'>
           <Detalle></Detalle>
