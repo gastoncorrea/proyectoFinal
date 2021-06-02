@@ -17,7 +17,7 @@ const Categoria = (props) => {
             producto.categoria === categoria ? (
               <CategoriaItem
                 producto={producto}
-                key={producto.id}
+                key={producto._id}
               ></CategoriaItem>
             ) : null
           )}

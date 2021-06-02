@@ -17,7 +17,7 @@ const CategoriaPcpal = (props) => {
       </main>
       <footer className="pie d-flex align-items-center flex-column justify-content-between">
         <h3>{props.producto.subtitulo}</h3>
-        <Link to={`/detalle-noticia/${props.producto.id}`}>
+        <Link to={`/detalle-noticia/${props.producto._id}`}>
           <Button className="mb-3">Ver mas...</Button>
         </Link>
       </footer>

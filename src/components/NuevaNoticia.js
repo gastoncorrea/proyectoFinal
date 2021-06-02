@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { Container, Form, Alert } from "react-bootstrap";
 
 const NuevaNoticia = (props) => {
+  const URL=process.env.REACT_APP_API_URL;
   const [titulo, setTitulo] = useState("");
   const [subtitulo, setSubtitulo] = useState("");
   const [categoria, setCategoria] = useState("");
@@ -56,7 +57,7 @@ const NuevaNoticia = (props) => {
           body: JSON.stringify(noticia)
         }
       try{
-        const respuesta = await fetch('http://localhost:3004/noticias',configuracion)
+        const respuesta = await fetch(URL,configuracion)
         if(respuesta.status === 201){
           console.log('se agrego producto');
           props.pedirDatos();

@@ -16,7 +16,7 @@ const principal = (props) => {
             producto.destacar === "ok" ? (
               <DestacadoItem
                 producto={producto}
-                key={producto.id}
+                key={producto._id}
               ></DestacadoItem>
             ) : null
           )}
@@ -55,7 +55,7 @@ const principal = (props) => {
             producto.categoria === "deportes" ? (
               <CategoriaPcpal
                 producto={producto}
-                key={producto.id}
+                key={producto._id}
               ></CategoriaPcpal>
             ) : null
           )}
@@ -68,7 +68,7 @@ const principal = (props) => {
             producto.categoria === "actualidad" ? (
               <CategoriaPcpal
                 producto={producto}
-                key={producto.id}
+                key={producto._id}
               ></CategoriaPcpal>
             ) : null
           )}
@@ -88,7 +88,7 @@ const principal = (props) => {
             producto.categoria === "salud" ? (
               <CategoriaPcpal
                 producto={producto}
-                key={producto.id}
+                key={producto._id}
               ></CategoriaPcpal>
             ) : null
           )}

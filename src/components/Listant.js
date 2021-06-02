@@ -13,7 +13,7 @@ const Listant = (props) => {
           {props.productos.map((producto) => 
             <NoticiaItem
               producto={producto}
-              key={producto.id}
+              key={producto._id}
               pedirDatos={props.pedirDatos}
             ></NoticiaItem>
           )}

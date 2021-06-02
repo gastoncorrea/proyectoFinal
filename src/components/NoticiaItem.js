@@ -65,10 +65,10 @@ const NoticiaItem = (props) => {
           
         </div>
         <div>
-          <Link to={`/admin/editar/${props.producto.id}`}>
+          <Link to={`/admin/editar/${props.producto._id}`}>
             <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
           </Link>
-          <Button variant="danger" className="ms-3" onClick={()=>eliminarProducto(props.producto.id)}>
+          <Button variant="danger" className="ms-3" onClick={()=>eliminarProducto(props.producto._id)}>
             <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
           </Button>
         </div>
