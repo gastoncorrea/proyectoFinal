@@ -8,9 +8,9 @@ const DestacadoItem = (props) => {
     <Fragment>
       <article className="mt-5 col-sm-12 col-lg-6 border">
         <header className="d-flex justify-content-center  titulo">
-          <h1 className="display-4 align-self-center">
+          <h2 className=" align-self-center">
             {props.producto.titulo}
-          </h1>
+          </h2>
         </header>
         <main className='my-3'>
           <img

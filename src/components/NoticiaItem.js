@@ -56,7 +56,7 @@ const NoticiaItem = (props) => {
     return (
         <ListGroup.Item className="d-flex justify-content-between align-items-center">
         <div className="d-flex justify-content-between">
-          <Link exact={true} to='/noticia' className='nav-link'><p>{props.producto.titulo}</p></Link>
+          <Link exact={true} to={`/detalle-noticia/${props.producto._id}`} className='nav-link'><p>{props.producto.titulo}</p></Link>
         </div>
         <div>
             {

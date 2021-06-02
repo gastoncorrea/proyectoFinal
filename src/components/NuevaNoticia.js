@@ -2,6 +2,8 @@ import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { Fragment } from "react";
 import { Container, Form, Alert } from "react-bootstrap";
+import Swal from "sweetalert2";
+import  {withRouter} from 'react-router-dom';
 
 const NuevaNoticia = (props) => {
   const URL=process.env.REACT_APP_API_URL;
@@ -22,12 +24,12 @@ const NuevaNoticia = (props) => {
     e.preventDefault();
     if (
       titulo.trim() === "" ||
-      titulo.length > 120 ||
+      titulo.length > 200 ||
       subtitulo.trim() === "" ||
       subtitulo.length > 200 ||
       categoria === "" ||
       detalle.trim() === "" ||
-      detalle.length > 2000 ||
+      detalle.length > 9000 ||
       link.trim() === "" ||
       autor.trim() === "" ||
       autor.length > 30 ||
@@ -59,8 +61,13 @@ const NuevaNoticia = (props) => {
       try{
         const respuesta = await fetch(URL,configuracion)
         if(respuesta.status === 201){
-          console.log('se agrego producto');
+          Swal.fire(
+            'Noticia creada',
+            'La noticia ingresada se agrego correctamente',
+            'success'
+          )
           props.pedirDatos();
+          props.history.push('/admin/lista-noticia');
         }
       }catch(e){
         console.log(error);
@@ -86,7 +93,7 @@ const NuevaNoticia = (props) => {
                 onChange={(e) => setTitulo(e.target.value)}
               />
               <Form.Text className="text-muted mb-3">
-                El titulo debe contener entre 1 y 120 caracteres
+                El titulo debe contener entre 1 y 200 caracteres
               </Form.Text>
             </Form.Group>
             <Form.Group controlId="titulo" className="my-3">
@@ -178,4 +185,4 @@ const NuevaNoticia = (props) => {
   );
 };
 
-export default NuevaNoticia;
+export default withRouter(NuevaNoticia);

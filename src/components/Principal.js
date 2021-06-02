@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import DestacadoItem from "./DestacadoItem";
 import CategoriaPcpal from "./CategoriaPcpal";
 
@@ -7,7 +7,7 @@ const principal = (props) => {
   return (
     <Fragment>
       <section className="row container my-5 d-flex text-center">
-        <h1 className="my-5 border rounded margen-superior">
+        <h1 className="display-4 my-5 border rounded margen-superior">
           Bienvenidos al portal de noticias que tiene la mejor información para
           vos.
         </h1>
@@ -21,27 +21,16 @@ const principal = (props) => {
             ) : null
           )}
         </div>
-        <article className="col-sm-12 col-lg-6 border mt-5">
-          <header className="d-flex justify-content-center  titulo">
-            <h1 className="display-3 align-self-center">Publicidad</h1>
-          </header>
+        <article className="col-sm-12 col-lg-6 mt-5 mx-auto">
           <main>
-            <img
-              src="https://images.pexels.com/photos/7819309/pexels-photo-7819309.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              className="w-100 imagen"
-              alt="Publicidad"
-            />
+            <Link>
+              <img
+                src="https://www.antevenio.com/wp-content/uploads/2017/06/coobis-es.jpg"
+                className="w-100 imagen"
+                alt="Publicidad"
+              />
+            </Link>
           </main>
-          <footer className="pie d-flex align-items-center flex-column justify-content-between">
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              reprehenderit minus vel, sunt repellendus eveniet est officia quo
-              rerum accusamus! Voluptates vel porro, facere perferendis
-              voluptate corporis impedit reiciendis nisi deserunt voluptatibus
-              fugit, architecto in quod doloribus dignissimos inventore ipsa!
-            </h3>
-            <Button className="mb-3">Ver mas...</Button>
-          </footer>
         </article>
       </section>
       <section className="my-5 row container">
@@ -60,6 +49,15 @@ const principal = (props) => {
             ) : null
           )}
         </div>
+        <div className="my-2 publicidad">
+          <Link>
+            <img
+              src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
+              className="w-100 h-50"
+              alt="publicidad"
+            />
+          </Link>
+        </div>
         <div className="bg-primary text-light py-3 my-3 rounded col-sm-12">
           <h3 className="ms-4">Actualidad</h3>
         </div>
@@ -74,11 +72,13 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <img
-            src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
-            className="w-100 h-50"
-            alt="publicidad"
-          />
+          <Link>
+            <img
+              src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
+              className="w-100 h-50"
+              alt="publicidad"
+            />
+          </Link>
         </div>
         <div className="bg-primary text-light py-3 my-3 rounded col-sm-12">
           <h3 className="ms-4">Salud</h3>
@@ -94,11 +94,13 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <img
-            src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
-            className="w-100 h-50"
-            alt="publicidad"
-          />
+          <Link>
+            <img
+              src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
+              className="w-100 h-50"
+              alt="publicidad"
+            />
+          </Link>
         </div>
       </section>
     </Fragment>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Fragment } from "react";
 import { Container, Form, Alert, Button } from "react-bootstrap";
 import {useParams, withRouter} from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const Editar = (props) => {
     const id = useParams().id;
@@ -86,7 +87,11 @@ const Editar = (props) => {
             body: JSON.stringify(productoModificado)
           })
           if(respuesta.status === 200){
-            console.log('se pudo modificar noticia');
+            Swal.fire(
+              'Noticia modificado',
+              'La noticia seleccionada fue modificada correctamente',
+              'success'
+            )
           }
           console.log(destacar);
           props.pedirDatos();

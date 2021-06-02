@@ -6,7 +6,7 @@ const CategoriaItem = (props) => {
   return (
     <article className="col-sm-12 col-lg-6 border mt-5">
       <header className="d-flex justify-content-center  titulo">
-        <h2 className="display-4 align-self-center">{props.producto.titulo}</h2>
+        <h2 className="align-self-center">{props.producto.titulo}</h2>
       </header>
       <body>
         <img
