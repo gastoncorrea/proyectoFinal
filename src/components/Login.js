@@ -1,13 +1,15 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Button, Form, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [contrasenia, setContrasenia] = useState("");
   const [usuarioDb, setUsuarioDb] = useState([]);
   const [error,setError] = useState(false);
-  const [valides, setValides] = useState('');
+  const [validarEmail, setValidarEmail] = useState('');
+  const [validarContrasenia, setValidarContrasenia] = useState('');
   const expRegular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion";
 
@@ -40,19 +42,24 @@ const Login = (props) => {
       console.log('valor de expresion regular: ' + !expRegular.test(email))
       console.log(contrasenia.length);
     }else{
+      setError(false);
      
       for(let i = 0; i < usuarioDb.length; i++){
         if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre === 'Admin'){
-          setError(false);
-          setValides(true);
+          setValidarEmail(email);
+          setValidarContrasenia(contrasenia);
           props.habilitar();
           console.log('Email valido ' );
-          console.log('valor de expresion regular: ' + !expRegular.test(email))
-          console.log(contrasenia.length);
           break;
+        }else{
+          if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre !== 'Admin'){
+            props.history.push('/');
+        } 
+
         }
       }
-      if(valides === ''){
+      // aqui tengo un error que debo solucionar, siempre entra por esta condicion el programa
+      if(validarEmail === '' || validarContrasenia === '' ){
         Swal.fire(
           'Usuario y/o contraseña incorrecta',
           'Verifique su usuario y/o contraseña'
@@ -97,4 +104,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default withRouter(Login);
