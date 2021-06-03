@@ -1,11 +1,34 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Button, Form, Alert } from "react-bootstrap";
+import Swal from 'sweetalert2';
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [contrasenia, setContrasenia] = useState("");
+  const [usuarioDb, setUsuarioDb] = useState([]);
   const [error,setError] = useState(false);
+  const [valides, setValides] = useState('');
   const expRegular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion";
+
+  useEffect(()=>{
+    traerUsuarios();
+  },[]);
+
+  const traerUsuarios = async () => {
+    try{
+      const pedirUsuario = await fetch(URL);
+      if(pedirUsuario.status === 200){
+        const usuario = await pedirUsuario.json();
+        setUsuarioDb(usuario);
+        console.log('usuarios cargados de base de datos');
+      }
+    }catch(e){
+      console.log(e);
+    }
+  }
+
+  
   
   // validaciones
   const validarCampos = (e)=>{
@@ -17,11 +40,24 @@ const Login = (props) => {
       console.log('valor de expresion regular: ' + !expRegular.test(email))
       console.log(contrasenia.length);
     }else{
-      setError(false);
-      props.habilitar();
-      console.log('Email valido');
-      console.log('valor de expresion regular: ' + !expRegular.test(email))
-      console.log(contrasenia.length);
+     
+      for(let i = 0; i < usuarioDb.length; i++){
+        if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre === 'Admin'){
+          setError(false);
+          setValides(true);
+          props.habilitar();
+          console.log('Email valido ' );
+          console.log('valor de expresion regular: ' + !expRegular.test(email))
+          console.log(contrasenia.length);
+          break;
+        }
+      }
+      if(valides === ''){
+        Swal.fire(
+          'Usuario y/o contraseña incorrecta',
+          'Verifique su usuario y/o contraseña'
+        )
+      }
     }
   }
   return (
