@@ -23,7 +23,7 @@ const principal = (props) => {
         </div>
         <article className="col-sm-12 col-lg-6 mt-5 mx-auto">
           <main>
-            <Link exact={true} to='404'>
+            <Link to='404'>
               <img
                 src="https://www.antevenio.com/wp-content/uploads/2017/06/coobis-es.jpg"
                 className="w-100 imagen"
@@ -50,7 +50,7 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <Link>
+          <Link to='404'>
             <img
               src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
               className="w-100 h-50"
@@ -72,7 +72,7 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <Link>
+          <Link to='404'>
             <img
               src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
               className="w-100 h-50"
@@ -94,7 +94,7 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <Link>
+          <Link to='404'>
             <img
               src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
               className="w-100 h-50"
