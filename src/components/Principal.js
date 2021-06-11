@@ -23,7 +23,7 @@ const principal = (props) => {
         </div>
         <article className="col-sm-12 col-lg-6 mt-5 mx-auto">
           <main>
-            <Link>
+            <Link exact={true} to='404'>
               <img
                 src="https://www.antevenio.com/wp-content/uploads/2017/06/coobis-es.jpg"
                 className="w-100 imagen"
