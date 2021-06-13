@@ -8,8 +8,8 @@ const Login = (props) => {
   const [contrasenia, setContrasenia] = useState("");
   const [usuarioDb, setUsuarioDb] = useState([]);
   const [error,setError] = useState(false);
-  const [validarEmail, setValidarEmail] = useState('');
-  const [validarContrasenia, setValidarContrasenia] = useState('');
+  let validarEmail = '';
+  let validarContrasenia = '';
   const expRegular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion";
 
@@ -46,19 +46,22 @@ const Login = (props) => {
      
       for(let i = 0; i < usuarioDb.length; i++){
         if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre === 'Admin'){
-          setValidarEmail(email);
-          setValidarContrasenia(contrasenia);
+          validarEmail = email;
+          validarContrasenia = contrasenia;
           props.habilitar();
-          console.log('Email valido ' );
+          props.history.push('/');
           break;
         }else{
+          console.log('dentro del else');
           if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre !== 'Admin'){
+            validarEmail = email;
+            validarContrasenia = contrasenia;
             props.history.push('/');
-        } 
+            break;
+        }
 
         }
       }
-      // aqui tengo un error que debo solucionar, siempre entra por esta condicion el programa
       if(validarEmail === '' || validarContrasenia === '' ){
         Swal.fire(
           'Usuario y/o contraseña incorrecta',
