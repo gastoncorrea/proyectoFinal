@@ -1,12 +1,40 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DestacadoItem from "./DestacadoItem";
 import CategoriaPcpal from "./CategoriaPcpal";
 
-const principal = (props) => {
+const Principal = (props) => {
+  /*
+  const [datosApi, setDatosApi] = useState({});
+  const URLApi =
+    "api.openweathermap.org/data/2.5/weather?q=tucuman,032&units=metric&appid=7f8e36ec72fa9271dc1083c7362c20b0";
+
+  useEffect(() => {
+    consultarApi();
+  }, []);
+
+  const consultarApi = async () => {
+    try {
+      const consulta = await fetch(
+        "api.openweathermap.org/data/2.5/weather?q=tucuman,032&units=metric&appid=7f8e36ec72fa9271dc1083c7362c20b0on"
+      );
+      // const resultado = await consulta.json();
+      if (consulta.status === 200) {
+        // setDatosApi(resultado[0]);
+        console.log("dentro el if");
+      }
+      // const resultado = await
+    } catch (e) {
+      console.log(e);
+    }
+  };
+*/
   return (
     <Fragment>
-      <section className="row container my-5 d-flex text-center">
+      <section className="row container my-5 d-flex text-center mx-auto">
+        <div className="my-5">
+          <div></div>
+        </div>
         <h1 className="display-4 my-5 border rounded margen-superior">
           Bienvenidos al portal de noticias que tiene la mejor información para
           vos.
@@ -23,7 +51,7 @@ const principal = (props) => {
         </div>
         <article className="col-sm-12 col-lg-6 mt-5 mx-auto">
           <main>
-            <Link to='404'>
+            <Link to="404">
               <img
                 src="https://www.antevenio.com/wp-content/uploads/2017/06/coobis-es.jpg"
                 className="w-100 imagen"
@@ -50,7 +78,7 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <Link to='404'>
+          <Link to="404">
             <img
               src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
               className="w-100 h-50"
@@ -72,7 +100,7 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <Link to='404'>
+          <Link to="404">
             <img
               src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
               className="w-100 h-50"
@@ -94,7 +122,7 @@ const principal = (props) => {
           )}
         </div>
         <div className="my-2 publicidad">
-          <Link to='404'>
+          <Link to="404">
             <img
               src="https://picjumbo.com/wp-content/uploads/dividends-text-free-photo-2210x1473.jpg"
               className="w-100 h-50"
@@ -107,4 +135,4 @@ const principal = (props) => {
   );
 };
 
-export default principal;
+export default Principal;

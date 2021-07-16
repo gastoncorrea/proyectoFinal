@@ -25,6 +25,9 @@ img{
     bottom: 0%;
     
 }
+.navbar-propio:active{
+    background-color: aqua;
+}
 /* article, header{
     height: 10%;
 } */
