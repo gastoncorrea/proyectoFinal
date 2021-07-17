@@ -25,8 +25,11 @@ img{
     bottom: 0%;
     
 }
-.navbar-propio:active{
-    background-color: aqua;
+.dropdown-item.active{
+    background-color: rgb(48, 12, 207) !important;
+}
+.dropdown-item.focus{
+    background-color: red !important;
 }
 /* article, header{
     height: 10%;
