@@ -1,13 +1,44 @@
-{"noticias":
-    [
-        {
-            "titulo":"Las maravillas del mundo",
-            "subtitulo":"Conoce lo mejor que tiene esta vida para darte",
-            "detalle":"En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
-            "imagen":"https://pixabay.com/es/photos/alpine-monta%C3%B1as-paisaje-naturaleza-4551338/",
-            "categoria":"salud",
-            "fecha":"01-01-2021",
-            "destacado": true
-        }
-    ]
+{
+  "noticias": [
+    {
+      "titulo": "Las maravillas del mundo",
+      "subtitulo": "Conoce lo mejor que tiene esta vida para darte",
+      "categoria": "salud",
+      "detalle": "En estos lugares que le mostramos a continuacion usted se dará cuenta lo inmenso y hermoso que es el lugar donde vivimos",
+      "link": "https://cdn.pixabay.com/photo/2021/05/22/17/06/hybrid-6274156_960_720.jpg",
+      "autor": "Luana Correa",
+      "destacar": "ok",
+      "id": 1
+    },
+    {
+      "titulo": "25 de Mayo, día de la primera junta de gobierno argentina",
+      "subtitulo": "En este dia se celebra la primera escalada de independencia en nuestro país.",
+      "categoria": "actualidad",
+      "detalle": "Bueno aca debemos ocupara unos renglones para poder completar la noticia",
+      "link": "https://cdn.pixabay.com/photo/2021/05/23/06/39/zebra-6275284_960_720.jpg",
+      "autor": "Gastón Correa",
+      "fecha": "2021-05-14",
+      "id": 2
+    },
+    {
+      "titulo": "Un día Martes feriado siguen tomando a pesar que mañana trabajan",
+      "subtitulo": "Hoy día los chiques siguen tomando como si fuera un día normal a pesar que mañana se trabaja todo el día, no se entiende tanta inmoralidad",
+      "categoria": "actualidad",
+      "detalle": "Un día martes ultimo dia de descanso los chiques estan haciendo fiesta, es decir tomando, escuchando musica, bailando y otras cosas para distenderse pero no estan pensando que mañana temprano hay que trabajar, yo digo que pasará con sus empresas que estan dependiendo de sus desempeños, será que mañana sera un dia negativo para sus empresas. ",
+      "link": "https://pickupimage.com/data/photo/2015/11/21/1121153-2590-D31A-40403DA74066E1DE.jpg",
+      "autor": "Gastón Correa",
+      "fecha": "2021-05-26",
+      "destacar": "ok",
+      "id": 3
+    },
+    {
+      "titulo": "29 de Mayo, día de comer ñoquis",
+      "subtitulo": "Hoy es 29 de Mayo y te traemos la mejor recetas de ñoquis para vos.",
+      "categoria": "deportes",
+      "detalle": "Tengo qe explayarme u no se que poner asi que vamos a tratar de escribit rapidco para preacticar la digitacion",
+      "link": "https://gratisography.com/wp-content/uploads/2021/04/gratisography-donut-fingers-07-free-stock-photo-1170x780.jpg",
+      "autor": "Andrea Morales",
+      "id": 5
+    }
+  ]
 }

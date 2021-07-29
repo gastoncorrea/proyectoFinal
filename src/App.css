@@ -1,0 +1,47 @@
+.imagen{
+    height: 400px;
+}
+
+.titulo{
+    height: 300px;
+}
+.pie{
+    height: 350px;
+}
+img{
+    object-fit: cover;
+}
+.publicidad{
+    width: 800px;
+    height: 200px;
+}
+.subir-navbar{
+    z-index: 2;
+    top: 0%;
+}
+.footer-fijo{
+    width: 100%;
+    /* position: fixed; */
+    bottom: 0%;
+    
+}
+.dropdown-item.active{
+    background-color: rgb(48, 12, 207) !important;
+}
+.dropdown-item.focus{
+    background-color: red !important;
+}
+/* article, header{
+    height: 10%;
+} */
+
+/* article, body{
+
+    width: 800px;
+    height: 500px;
+} */
+
+/* article, body, img{
+    width: 100%;
+    height: 500px;
+} */
