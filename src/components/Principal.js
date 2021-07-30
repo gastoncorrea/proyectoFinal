@@ -4,7 +4,9 @@ import DestacadoItem from "./DestacadoItem";
 import CategoriaPcpal from "./CategoriaPcpal";
 
 const Principal = (props) => {
-  /*
+  
+  /* ******CODIGO DE PRUEBA PARA AGREGAR API DEL CLIMA******
+
   const [datosApi, setDatosApi] = useState({});
   const URLApi =
     "api.openweathermap.org/data/2.5/weather?q=tucuman,032&units=metric&appid=7f8e36ec72fa9271dc1083c7362c20b0";

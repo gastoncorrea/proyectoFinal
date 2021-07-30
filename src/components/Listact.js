@@ -92,7 +92,9 @@ const Listact = () => {
             placeholder="Si desea ingrese una nueva categoria"
           />
         </Form.Group>
+        <Link to='404'>
         <Button className="btn btn-primary">Guardar</Button>
+        </Link>
       </Form>
     </Container>
   );
