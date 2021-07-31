@@ -28,7 +28,7 @@ const Suscripcion = (props) => {
       aceptar !== ''
     ) {
       setError(false);
-      const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion";
+      const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion/nuevo";
       const usuario = {
         nombre: nombre,
         fecha: fecha,

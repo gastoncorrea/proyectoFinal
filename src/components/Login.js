@@ -11,29 +11,42 @@ const Login = (props) => {
   let validarEmail = '';
   let validarContrasenia = '';
   const expRegular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-  const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion";
+  const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion/"+email;
 
-  useEffect(()=>{
-    traerUsuarios();
-  },[]);
+  // useEffect(()=>{
+  //   traerUsuarios();
+  // },[]);
 
-  const traerUsuarios = async () => {
+  // const traerUsuarios = async () => {
+    
+  //   try{
+  //     const pedirUsuario = await fetch(URL);
+  //     if(pedirUsuario.status === 200){
+  //       const usuario = await pedirUsuario.json();
+  //       setUsuarioDb(usuario);
+  //       console.log('usuario cargados de base de datos'+usuarioDb);
+  //     }
+  //   }catch(e){
+  //     console.log(e);
+  //   }
+  // }
+
+  const cargarUsuario = async () => {
     try{
+      console.log(URL);
       const pedirUsuario = await fetch(URL);
       if(pedirUsuario.status === 200){
         const usuario = await pedirUsuario.json();
         setUsuarioDb(usuario);
-        console.log('usuarios cargados de base de datos');
+        console.log('usuario cargados de base de datos'+usuarioDb);
       }
     }catch(e){
       console.log(e);
     }
   }
-
-  
   
   // validaciones
-  const validarCampos = (e)=>{
+  const validarCampos = async (e)=>{
     e.preventDefault();
     if(email.trim()==='' || contrasenia.trim() === '' || !expRegular.test(email) || contrasenia.length < 8){
       setError(true)
@@ -43,31 +56,49 @@ const Login = (props) => {
       console.log(contrasenia.length);
     }else{
       setError(false);
-     
-      for(let i = 0; i < usuarioDb.length; i++){
-        if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre === 'Admin'){
-          validarEmail = email;
-          validarContrasenia = contrasenia;
-          props.habilitar();
-          props.history.push('/');
-          break;
-        }else{
-          console.log('dentro del else');
-          if(usuarioDb[i].email === email && usuarioDb[i].contrasenia === contrasenia && usuarioDb[i].nombre !== 'Admin'){
+      if(usuarioDb === null){
+        Swal.fire(
+          'El usuario no existe',
+          'Verifique su usuario'
+        )
+      }else{
+        // for(let i = 0; i < usuarioDb.length; i++){
+          if(usuarioDb.email === email && usuarioDb.contrasenia === contrasenia && usuarioDb.nombre === 'Admin'){
             validarEmail = email;
             validarContrasenia = contrasenia;
+            props.habilitar();
             props.history.push('/');
-            break;
-        }
+            // break;
+          }else{
+            console.log('dentro del else');
+            if(usuarioDb.email === email && usuarioDb.contrasenia === contrasenia && usuarioDb.nombre !== 'Admin'){
+              validarEmail = email;
+              validarContrasenia = contrasenia;
+              console.log(usuarioDb.email + "y" + usuarioDb.contrasenia);
+              props.history.push('/');
+              // break;
+          }else{
+            if(validarEmail === '' || validarContrasenia === '' ){
+              Swal.fire(
+                'Usuario y/o contraseña incorrecta',
+                'Verifique su usuario y/o contraseña'
+              )
+            }
+          }
+      }
+      
+      //else{
+          // if(usuarioDb.email === null){
+          //   Swal.fire(
+          //     'El usuario no existe',
+          //     'Verifique su usuario'
+          //   )
+          // }
+        // }
 
         }
-      }
-      if(validarEmail === '' || validarContrasenia === '' ){
-        Swal.fire(
-          'Usuario y/o contraseña incorrecta',
-          'Verifique su usuario y/o contraseña'
-        )
-      }
+      // }
+      
     }
   }
   return (
@@ -81,7 +112,7 @@ const Login = (props) => {
         <Form className="my-5" onSubmit={validarCampos}>
           <Form.Group controlId="email">
             <Form.Label>Correo electronico</Form.Label>
-            <Form.Control type="email" placeholder="gaston@djfhf.com" onChange={(e)=>setEmail(e.target.value)} />
+            <Form.Control type="email" placeholder="gaston@djfhf.com" onChange={(e)=>setEmail(e.target.value)} onBlur={cargarUsuario} />
             <Form.Text className="text-muted mb-3">
               Requerimientos de contraseña:
             </Form.Text>
