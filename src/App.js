@@ -19,6 +19,7 @@ import Error404 from './components/Error404';
 
 function App() {
   const [habilitarAdmin, setHabilitarAdmin] = useState(false);
+  const [habilitarLogin, setHabilitarLogin] = useState(true);
   const [producto, setProducto] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
 
@@ -50,10 +51,13 @@ function App() {
   const desHabilitar = () => {
     setHabilitarAdmin(false);
   }
+  const deshabilitarLogin = ()=>{
+    setHabilitarLogin(false);
+  }
 
   return (
     <Router>
-          <Navegacion habilitarAdmin={habilitarAdmin}></Navegacion>
+          <Navegacion habilitarAdmin={habilitarAdmin} habilitarLogin={habilitarLogin}></Navegacion>
       <Switch>
         <Route exact path='/'>
           <Principal productos={producto} ></Principal>
@@ -68,7 +72,7 @@ function App() {
           <Detalle></Detalle>
         </Route>
         <Route exact path='/login'>
-          <Login habilitar={habilitar} deshabilitar={desHabilitar}></Login>
+          <Login habilitar={habilitar} deshabilitar={desHabilitar} deshabilitarLogin={deshabilitarLogin}></Login>
         </Route>
         <Route exact path='/admin'>
           <Admin></Admin>

@@ -67,7 +67,7 @@ const Navegacion = (props) => {
             <Link exact={true} to="/suscripcion" className="nav-link">
               Suscribite
             </Link>
-            {(props.habilitarAdmin === false)?(<Link exact={true} to="/login" className="nav-link">
+            {(props.habilitarLogin === true)?(<Link exact={true} to="/login" className="nav-link">
               Login
             </Link>):(null)}
             {props.habilitarAdmin === true ? (
