@@ -1,40 +1,32 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Button, Form, Alert } from "react-bootstrap";
+import { Button, Form, Alert, Container } from "react-bootstrap";
 import Swal from 'sweetalert2';
 import {withRouter} from 'react-router-dom';
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [contrasenia, setContrasenia] = useState("");
-  const [usuarioDb, setUsuarioDb] = useState([]);
+  const [usuarioDb, setUsuarioDb] = useState({});
   const [error,setError] = useState(false);
   let validarEmail = '';
   let validarContrasenia = '';
   const expRegular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-  const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/suscripcion/"+email;
+  const URL = process.env.REACT_APP_API_URL+ "/" + "usuario/login/";
 
-  // useEffect(()=>{
-  //   traerUsuarios();
-  // },[]);
+  const login = {
+    usEmail:email,
+    usContrasenia:contrasenia
+  };
 
-  // const traerUsuarios = async () => {
-    
-  //   try{
-  //     const pedirUsuario = await fetch(URL);
-  //     if(pedirUsuario.status === 200){
-  //       const usuario = await pedirUsuario.json();
-  //       setUsuarioDb(usuario);
-  //       console.log('usuario cargados de base de datos'+usuarioDb);
-  //     }
-  //   }catch(e){
-  //     console.log(e);
-  //   }
-  // }
+  const configuracion = {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(login)
+  }
 
   const cargarUsuario = async () => {
     try{
-      console.log(URL);
-      const pedirUsuario = await fetch(URL);
+      const pedirUsuario = await fetch(URL,configuracion);
       if(pedirUsuario.status === 200){
         const usuario = await pedirUsuario.json();
         setUsuarioDb(usuario);
@@ -56,29 +48,30 @@ const Login = (props) => {
       console.log(contrasenia.length);
     }else{
       setError(false);
-      if(usuarioDb === null){
+      // cargarUsuario();
+      if(usuarioDb === "Usuario invalido"){
         Swal.fire(
           'El usuario no existe',
           'Verifique su usuario'
         )
       }else{
         // for(let i = 0; i < usuarioDb.length; i++){
-          if(usuarioDb.email === email && usuarioDb.contrasenia === contrasenia && usuarioDb.nombre === 'Admin'){
+          if(usuarioDb.contrasenia === true && usuarioDb.nombre === 'Admin'){
             validarEmail = email;
             validarContrasenia = contrasenia;
             props.habilitar();
             props.history.push('/');
             // break;
           }else{
-            console.log('dentro del else');
-            if(usuarioDb.email === email && usuarioDb.contrasenia === contrasenia && usuarioDb.nombre !== 'Admin'){
+            console.log('dentro del else' + usuarioDb);
+            if(usuarioDb.contrasenia === true && usuarioDb.nombre !== 'Admin'){
               validarEmail = email;
               validarContrasenia = contrasenia;
-              console.log(usuarioDb.email + "y" + usuarioDb.contrasenia);
+              console.log(usuarioDb.nombre + "y" + usuarioDb.contrasenia);
               props.history.push('/');
               // break;
           }else{
-            if(validarEmail === '' || validarContrasenia === '' ){
+            if(usuarioDb.contrasenia === false){
               Swal.fire(
                 'Usuario y/o contraseña incorrecta',
                 'Verifique su usuario y/o contraseña'
@@ -112,7 +105,7 @@ const Login = (props) => {
         <Form className="my-5" onSubmit={validarCampos}>
           <Form.Group controlId="email">
             <Form.Label>Correo electronico</Form.Label>
-            <Form.Control type="email" placeholder="gaston@djfhf.com" onChange={(e)=>setEmail(e.target.value)} onBlur={cargarUsuario} />
+            <Form.Control type="email" placeholder="gaston@djfhf.com" onChange={(e)=>setEmail(e.target.value)}/>
             <Form.Text className="text-muted mb-3">
               Requerimientos de contraseña:
             </Form.Text>
@@ -124,6 +117,7 @@ const Login = (props) => {
               placeholder="Escribe tu contraseña"
               className="mb-3"
               onChange={(e)=>setContrasenia(e.target.value)}
+              onBlur={cargarUsuario}
             />
           </Form.Group>
           <Button variant="primary" type="submit" className="mt-3">
